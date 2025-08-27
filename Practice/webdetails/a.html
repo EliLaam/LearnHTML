@@ -17,7 +17,7 @@
     <h2>Try it</h2>
     <p>You can reach me at:</p>
     <ul>
-      <li><a href="http://127.0.0.1:3000/Practice/contact.html">Website</a></li>
+      <li><a href="https://www.google.com">Website</a></li>
       <li><a href="mailto:Tuhochtml@gmail.com">Email</a></li>
       <li><a href="tel:+112112">Phone</a></li>
     </ul>
@@ -60,15 +60,15 @@
           </li>
         </ul>
       </p>
-      <h3>2.<code>target</code></h3>
+      <h3>2.<code class="language-html">target</code></h3>
       <p>
         <ul>
           <li><strong>Công dụng:</strong>Quy định cách thức mở liên kết (mở ở tab hiện tại hay tab mới).</li>
           <li><strong>Giá trị quan trọng nhất:</strong>
             <ul>
-              <li><code>_blank</code>: <strong>Mở liên kết 1 tab mới.</strong> 
+              <li><code class="language-html">_blank</code>: <strong>Mở liên kết 1 tab mới.</strong> 
                   Đây là giá trị bạn sẽ dùng cực kỳ thường xuyên, đặc biệt là khi liên kết ra một trang web bên ngoài để giữ người dùng ở lại trang của bạn.<br>
-                  <code>
+                  <code class="language-html">
                     &lt;a href=&quot;https://developer.mozilla.org&quot; target=&quot;_blank&quot;&gt;Mở MDN ở tab mới&lt;/a&gt;
                   </code>
               </li>
@@ -77,12 +77,76 @@
           <li><strong>Giá trị mặc định:</strong>
             <ul>
               <li>
-                <code>_self</code>: Mở liên kết ngay trên tab/cửa sổ hiện tại. Đây là hành vi mặc định, bạn không cần ghi ra.
+                <code class="language-html">_self</code>: Mở liên kết ngay trên tab/cửa sổ hiện tại. Đây là hành vi mặc định, bạn không cần ghi ra.
               </li>
             </ul>
           </li>
         </ul>
       </p>
+    <h3>NHÓM 2: Những Thuộc Tính Rất Hữu Dụng & Thường Gặp</h3>
+    <p>Những thuộc tính này giúp tăng cường bảo mật, SEO và cung cấp thêm tính năng cho liên kết.</p>
+      <h3>3.<code class="language-html">rel</code> (Relationship)</h3>
+        <ul>
+          <li><strong>Công dụng:</strong> Mô tả <strong>mối quan hệ</strong> giữa trang hiện tại và trang được liên kết. 
+              Rất quan trọng cho <strong>bảo mật</strong> và <strong>SEO</strong>.</li>
+          <li><strong>Các giá trị quan trọng khi dùng <code class="language-html">target="_blank"</code>:</strong>
+            <ul>
+              <li>noopener: Một biện pháp bảo mật. Nó ngăn không cho trang mới có thể truy cập và điều khiển trang gốc thông qua các đối tượng của trình duyệt. 
+                  Luôn dùng <code class="language-html">noopener</code> khi bạn dùng <code class="language-html">target="_blank</code>".</li>
+              <li>noreferrer: Ngăn trình duyệt gửi thông tin về trang gốc (trang của bạn) đến trang đích. 
+                  Tăng tính riêng tư cho người dùng.</li>
+              <li><strong>Thực hành tốt nhất:</strong> Luôn kết hợp cả hai.
+                <code class="language-html">
+                  &lt;a href=&quot;https://example.com&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;&gt;Liên kết an toàn&lt;/a&gt;
+                </code>
+              </li>
+            </ul>
+          </li>
+          <li><strong>Giá trị quan trọng của SEO:</strong>
+            <ul>
+              <li>
+                <code class="language-html">nofollow:</code> Báo cho các công cụ tìm kiếm (như Google) rằng "đừng đi theo liên kết này" hoặc "đừng tính liên kết này vào việc xếp hạng trang web". 
+                Thường dùng cho các liên kết quảng cáo hoặc liên kết trong phần bình luận của người dùng.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      <h3>4.<code class="language-html">download</code></h3>
+        <ul>
+          <li><strong>Công dụng:</strong> Báo cho trình duyệt <strong>tải về</strong> tệp tin được liên kết thay vì cố gắng mở nó ra. 
+              Cực kỳ hữu ích khi bạn muốn người dùng tải CV, file PDF, file ảnh...</li>
+          <li><strong>Cách dùng:</strong>
+            <ul>
+              <li>
+                <strong>Không cần giá trị:</strong> Trình duyệt sẽ tự động tải file về với tên gốc.
+                <code class="language-html">&lt;a href=&quot;/files/bao-cao.pdf&quot; download&gt;Tải báo cáo&lt;/a&gt;</code>
+              </li>
+              <li>
+                <strong>Có giá trị:</strong> Bạn có thể gợi ý một tên file mới cho người dùng.
+                <code class="language-html">&lt;a href=&quot;/images/photo-123.jpg&quot; download=&quot;hinh-anh-dep.jpg&quot;&gt;Tải ảnh&lt;/a&gt;</code>
+              </li>
+            </ul>
+          </li>
+        </ul>
+    <h3>NHÓM 3: Các Thuộc Tính Ít Dùng Hơn (Biết Sơ Lược)</h3>
+      <p>Bạn sẽ ít khi chạm tới những cái này trừ khi làm các dự án đặc thù.</p>
+        <ul>
+          <li><code class="language-html">hreflang</code>: Chỉ định ngôn ngữ của trang được liên kết (ví dụ: <code class="language-html">hreflang="en"</code> cho tiếng Anh). Tốt cho SEO các trang đa ngôn ngữ.</li>
+          <li><code class="language-html">type</code>: Chỉ định loại MIME của tài liệu (ví dụ:<code class="language-html"> type="image/png"</code>). Giúp trình duyệt biết trước loại file sắp mở là gì.</li>
+        </ul>
+    <h2>TÓM TẮT CUỐI CÙNG DÀNH CHO BẠN</h2>
+      <p>Trong 95% công việc hàng ngày, bạn chỉ cần nhớ:</p>
+        <ol>
+          <li>Dùng <code class="language-html">href</code> để chỉ định <strong>đường dẫn</strong>.</li>
+          <li>Nếu muốn mở tab mới, dùng <code class="language-html">target="_blank"</code>.</li>
+          <li><strong>Luôn luôn</strong> đi kèm <code class="language-html">rel="noopener noreferrer"</code> khi dùng <code class="language-html">target="_blank"</code> để đảm bảo an toàn.</li>
+          <li>Khi muốn người dùng tải file, thêm thuộc tính <code class="language-html">download</code>.</li>
+        </ol>
+      <p>Một liên kết ra ngoài điển hình và an toàn sẽ trông như thế này:</p>
+        <code class="language-html">&lt;a href=&quot;https://en.wikipedia.org/wiki/HTML&quot; 
+              target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;
+              &gt;Đọc thêm về HTML trên Wikipedia&lt;/a&gt;</code>
+              
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-core.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
   </body>
